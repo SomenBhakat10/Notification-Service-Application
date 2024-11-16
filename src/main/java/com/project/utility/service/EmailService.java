@@ -18,8 +18,8 @@ public class EmailService {
 
 	private static final Logger LOG = LoggerFactory.getLogger(EmailService.class);
 
-	private static final String SENDER_MAIL = "DemoService@gmail.com";
-	private static final String MAIL_SUBJECT = "Test-Email from Praveen";
+	private static final String SENDER_MAIL = "somenbhakat10@gmail.com";
+	private static final String MAIL_SUBJECT = "Test-Email from Somen";
 	@Autowired
 	private JavaMailSender javaMailSender;
 
@@ -27,7 +27,7 @@ public class EmailService {
 	public void sendEmail(User user, String message) throws EmailException {
 		LOG.info("Sending mail to user: {}", user.getEmail());
 		SimpleMailMessage mail = new SimpleMailMessage();
-		mail.setTo(user.getEmail());
+		mail.setTo("somenbhakat123@gmail.com");
 		mail.setFrom(SENDER_MAIL);
 		mail.setSubject(MAIL_SUBJECT);
 		mail.setText(message);

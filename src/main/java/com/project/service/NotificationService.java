@@ -54,7 +54,7 @@ public class NotificationService implements INotificationService {
 		User user = userService.getUser(userId);
 		if (user != null) {
 			createNotification(notification, user);
-			String plan = user.getSubscriptionPlan();
+			String plan = "GOLD";
 			sendNotification(user, Enum.valueOf(Plan.class, plan), notification.getMessage());
 		} else {
 			LOG.error("User not found in database");

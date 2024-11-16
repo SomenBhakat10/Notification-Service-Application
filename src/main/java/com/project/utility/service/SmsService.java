@@ -18,9 +18,9 @@ public class SmsService {
 
 	private static final Logger LOG = LoggerFactory.getLogger(SmsService.class);
 	
-	public static final String ACCOUNT_SID = "ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
-	public static final String AUTH_TOKEN = "your_auth_token";
-	private static final String SENDER_NUMBER = "+4345356464";
+	public static final String ACCOUNT_SID = "ACa9319f6e40b303a8b9c7f0c95e96d751";
+	public static final String AUTH_TOKEN = "19f3495211885bd409da59fcf95bbae6";
+	private static final String SENDER_NUMBER = "+18155136294";
 
 	@PostConstruct
 	public void init() {
@@ -31,7 +31,7 @@ public class SmsService {
 	public void sendSMS(User user, String message) throws SmsException {
 		Message msg;
 		try {
-			PhoneNumber toNumber = new com.twilio.type.PhoneNumber(user.getPhoneNumber());
+			PhoneNumber toNumber = new com.twilio.type.PhoneNumber("+919677150077");
 			PhoneNumber fromNumber = new com.twilio.type.PhoneNumber(SENDER_NUMBER);
 			msg = Message.creator(toNumber, fromNumber, message).create();
 			LOG.info("Message sent with sid: {}", msg.getSid());
